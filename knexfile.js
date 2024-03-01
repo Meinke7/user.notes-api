@@ -7,9 +7,16 @@ module.exports = {
     connection: {
       filename: path.resolve(__dirname, "src", "database", "database.db")
     },
+    pool: {
+      afterCreate: (conn, cb) => ("PRAGMA foreing_keys = ON", cb)
+    },
     migrations: {
       directory: path.resolve(__dirname, "src", "database", "knex", "migrations")
     },
-    useNullAsDefault: true
+    useNullAsDefault: true, 
+    pool: {
+      min: 2,
+      max: 10
+    }
   }
 }

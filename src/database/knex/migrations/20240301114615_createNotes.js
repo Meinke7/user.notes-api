@@ -2,10 +2,10 @@ const knex = require('knex');
 exports.up = function(knex) {
   return knex.schema.createTable('notes', function(table) {
     table.increments('id').primary();
-    table.string('title');
+    table.text('title');
     table.text('description');
-    table.integer('user_id').unsigned().references('id').inTable('users');
-    table.timestamps(true, true);
+    table.integer('user_id').references('id').inTable('users');
+    table.timestamps(true, true)
   });
 };
 
