@@ -1,7 +1,7 @@
 <h1 align="center"> API para criação de Notas </h1>
 
 <p align="center">
-Node.js
+JavaScript
 </p>
 
 <p align="center">
