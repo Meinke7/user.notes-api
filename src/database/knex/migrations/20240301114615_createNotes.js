@@ -5,6 +5,7 @@ exports.up = function(knex) {
     table.text('title');
     table.text('description');
     
+    table.integer('user_rating').checkIn([1, 2, 3, 4, 5])
     table.integer('user_id').references('id').inTable('users');
     table.timestamps(true, true)
   });
